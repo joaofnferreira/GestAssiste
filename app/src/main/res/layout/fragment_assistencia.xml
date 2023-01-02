@@ -5,6 +5,8 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F8F2F4"
+    android:backgroundTint="#9ED8DD"
     tools:context=".fragmentos.Assistencia">
 
 

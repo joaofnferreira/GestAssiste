@@ -13,11 +13,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gestassiste.R.*
 
-import com.example.gestassiste.fragmentos.Equipamento
-
 class Camera : AppCompatActivity() {
 
-     lateinit var button: Button
+     lateinit var photo: Button
      lateinit var imageView: ImageView
 
 
@@ -27,10 +25,10 @@ class Camera : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layout.activity_main)
-        button = findViewById(id.button)
+        photo = findViewById(id.image_capture_button)
 
 
-        button.setOnClickListener {
+        photo.setOnClickListener {
             capturePhoto()
         }
     }

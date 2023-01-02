@@ -5,6 +5,8 @@
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#9ED8DD"
     tools:context=".MainActivity">
 
 
@@ -74,8 +76,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <Button
-        android:id="@+id/button"
+        android:id="@+id/image_capture_button"
         android:layout_width="125dp"
         android:layout_height="78dp"
         android:layout_marginStart="140dp"
