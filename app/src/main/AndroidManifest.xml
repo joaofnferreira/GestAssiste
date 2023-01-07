@@ -48,7 +48,7 @@
         </activity>
         <activity android:name=".Assistencia"></activity>
         <activity android:name=".Consulta"></activity>
-        <activity android:name=".Camera"></activity>
+
     </application>
 
 </manifest>

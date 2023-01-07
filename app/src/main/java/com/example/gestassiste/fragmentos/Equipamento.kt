@@ -18,7 +18,7 @@ import com.example.gestassiste.R
 class Equipamento : Fragment() {
 
 
-    lateinit var button1: Button
+    lateinit var photo_button: Button
     lateinit var imageView: ImageView
 
     ///////////////////////////////////////////////////////////////
@@ -27,14 +27,18 @@ class Equipamento : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
 
+
+
     ): View? {
         // Inflate the layout for this fragment
         var view:View = inflater.inflate(R.layout.fragment_equipamento, container, false)
 
-        button1 = view.findViewById(R.id.button1)
+
+
+        photo_button = view.findViewById(R.id.photo_button)
         imageView = view.findViewById(R.id.imageView)
 
-        button1.setOnClickListener {
+        photo_button.setOnClickListener {
             capturePhoto()
         }
         return view
@@ -49,18 +53,12 @@ class Equipamento : Fragment() {
             if (result.resultCode == Activity.RESULT_OK) {
                 val data: Intent? = result.data
                 imageView.setImageBitmap(data?.extras?.get("data") as Bitmap)
+
             }
+
+
+
         }
-
-
-
-
-///////////////////////////////////////////////////////////////////////////////////
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////
-
 
 
 
