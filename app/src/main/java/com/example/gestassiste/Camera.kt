@@ -25,7 +25,7 @@ class Camera : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(layout.activity_main)
-        photo = findViewById(id.image_capture_button)
+      //  photo = findViewById(id.image_capture_button)
 
 
         photo.setOnClickListener {

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutDescription="@xml/fragment_clientes_scene"
-    tools:context=".fragmentos.Clientes">
+    tools:context=".fragmentos.Cliente">
 
     <TextView
         android:id="@+id/cemail"
