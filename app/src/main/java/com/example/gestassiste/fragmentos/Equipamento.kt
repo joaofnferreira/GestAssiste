@@ -1,8 +1,11 @@
 package com.example.gestassiste.fragmentos
 
+import android.Manifest
 import android.app.Activity
+import android.content.ContentValues
 import android.content.Intent
 import android.graphics.Bitmap
+import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.LayoutInflater
@@ -54,15 +57,38 @@ class Equipamento : Fragment() {
                 val data: Intent? = result.data
                 imageView.setImageBitmap(data?.extras?.get("data") as Bitmap)
 
+
+
             }
+
+
 
 
 
         }
 
+    val contentValues = ContentValues().apply {
+        //put(MediaStore.MediaColumns.DISPLAY_NAME)
+        put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
+        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
+            put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/CameraX-Image")
+        }
+    }
+
+                companion object {
+                    private const val TAG = "CameraXApp"
+                    private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
+                    private const val REQUEST_CODE_PERMISSIONS = 10
+                    private val REQUIRED_PERMISSIONS =
+                        mutableListOf (
+                            Manifest.permission.CAMERA).apply {
+                            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) {
+                                add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                            }
+                        }.toTypedArray()
+                }
 
 
+}
 
 
-
-   }
