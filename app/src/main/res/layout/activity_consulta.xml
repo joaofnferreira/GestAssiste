@@ -15,7 +15,7 @@
             android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnGetNotes"
+                    android:id="@+id/btnGetlistAssiste"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Teste API " />

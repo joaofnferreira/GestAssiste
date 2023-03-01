@@ -18,7 +18,7 @@ class AssiteListAdapter(private val assistes: List<Assiste>,private val context:
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val note = assistes[position]
-            holder?.let {
+            holder.let {
                 it.bindView(note)
             }
         }
@@ -36,33 +36,33 @@ class AssiteListAdapter(private val assistes: List<Assiste>,private val context:
         class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
             fun bindView(assites: Assiste) {
-                val nomeCliente: TextView = itemView.findViewById(R.id.note_nomeCliente)
-                val emailCliente: TextView = itemView.findViewById(R.id.note_emailCliente)
-                val telefoneCliente: TextView = itemView.findViewById(R.id.note_telefoneCliente)
-                val equipamento: TextView = itemView.findViewById(R.id.note_equipamento)
-                val modelo: TextView = itemView.findViewById(R.id.note_modelo)
-                val serial: TextView = itemView.findViewById(R.id.note_serial)
-                val incioAssistencia: TextView = itemView.findViewById(R.id.note_incioAssistencia)
-                val problemaCliente: TextView = itemView.findViewById(R.id.note_problemaCliente)
-                val resolucao: TextView = itemView.findViewById(R.id.note_resolucao)
-                val orcamento: TextView = itemView.findViewById(R.id.note_orcamento)
-                val dataFim: TextView = itemView.findViewById(R.id.note_dataFim)
-                val foto: TextView = itemView.findViewById(R.id.note_foto)
+                val NomeCliente: TextView = itemView.findViewById(R.id.note_nomeCliente)
+                val EmailCliente: TextView = itemView.findViewById(R.id.note_emailCliente)
+                val TelefoneCliente: TextView = itemView.findViewById(R.id.note_telefoneCliente)
+                val Equipamento: TextView = itemView.findViewById(R.id.note_equipamento)
+                val Modelo: TextView = itemView.findViewById(R.id.note_modelo)
+                val Serial: TextView = itemView.findViewById(R.id.note_serial)
+                val IncioAssistencia: TextView = itemView.findViewById(R.id.note_incioAssistencia)
+                val ProblemaCliente: TextView = itemView.findViewById(R.id.note_problemaCliente)
+                val Resolucao: TextView = itemView.findViewById(R.id.note_resolucao)
+                val Orcamento: TextView = itemView.findViewById(R.id.note_orcamento)
+                val DataFim: TextView = itemView.findViewById(R.id.note_dataFim)
+                val Foto: TextView = itemView.findViewById(R.id.note_foto)
                 // adicionar os restantes
 
 
-                nomeCliente.text = assites.nomeCliente
-                emailCliente.text = assites.emailCliente
-                telefoneCliente.text = assites.telefoneCliente
-                equipamento.text = assites.equipamento
-                modelo.text = assites.modelo
-                serial.text = assites.serial
-                incioAssistencia.text = assites.incioAssistencia
-                problemaCliente.text = assites.problemaCliente
-                resolucao.text = assites.resolucao
-                orcamento.text = assites.orcamento
-                dataFim.text = assites.dataFim
-                foto.text = assites.foto
+                NomeCliente.text = assites.NomeCliente
+                EmailCliente.text = assites.EmailCliente
+                TelefoneCliente.text = assites.TelefoneCliente
+                Equipamento.text = assites.Equipamento
+                Modelo.text = assites.Modelo
+                Serial.text = assites.Serial
+                IncioAssistencia.text = assites.IncioAssistencia
+                ProblemaCliente.text = assites.ProblemaCliente
+                Resolucao.text = assites.Resolucao
+                Orcamento.text = assites.Orcamento
+                DataFim.text = assites.DataFim
+                Foto.text = assites.Foto
 
 
 

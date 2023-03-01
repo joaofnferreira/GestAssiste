@@ -11,7 +11,7 @@
 
 
     <TextView
-        android:id="@+id/equipamento"
+        android:id="@+id/Equipamento"
         android:layout_width="112dp"
         android:layout_height="18dp"
         android:layout_marginStart="48dp"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/modelo"
+        android:id="@+id/Modelo"
         android:layout_width="72dp"
         android:layout_height="18dp"
         android:layout_marginStart="60dp"
