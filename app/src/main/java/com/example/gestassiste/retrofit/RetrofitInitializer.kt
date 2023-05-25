@@ -12,6 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitInitializer {
 
+    // vamos precisar de colocar o nosso endereço web para comunicação
 
    // val host = "http://10.0.2.2/"
    // val host = "http://ram.ipt.pt/"

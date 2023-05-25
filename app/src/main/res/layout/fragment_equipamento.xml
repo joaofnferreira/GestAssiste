@@ -91,10 +91,11 @@
         android:id="@+id/imageView"
 
 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="431dp"
+        android:layout_height="186dp"
         android:layout_below="@id/photo_button"
-         />
+        tools:layout_editor_absoluteX="-15dp"
+        tools:layout_editor_absoluteY="340dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
