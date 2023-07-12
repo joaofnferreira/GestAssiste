@@ -14,11 +14,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
-
-
-
         val buttonClick = findViewById<Button>(R.id.criarassistencia)
 
         buttonClick.setOnClickListener {
@@ -30,13 +25,8 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, Consulta::class.java)
                 startActivity(intent)
             }
-
         }
-
-
-
     }
-
     }
 
 
