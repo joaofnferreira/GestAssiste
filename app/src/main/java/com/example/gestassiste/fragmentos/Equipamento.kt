@@ -31,8 +31,6 @@ class Equipamento : Fragment() {
     private lateinit var cmodelo: EditText
     private lateinit var cserial: EditText
 
-    private lateinit var dbRef: DatabaseReference
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,14 +45,11 @@ class Equipamento : Fragment() {
         cmodelo = view.findViewById(R.id.cmodelo)
         cserial = view.findViewById(R.id.cserial)
 
-        dbRef = FirebaseDatabase.getInstance().getReference("Assist")
-
         photo_button = view.findViewById(R.id.photo_button)
         imageView = view.findViewById(R.id.imageView)
 
         photo_button.setOnClickListener {
             capturePhoto()
-
         }
         return view
 
@@ -71,11 +66,7 @@ class Equipamento : Fragment() {
             if (result.resultCode == Activity.RESULT_OK) {
                 val data: Intent? = result.data
                 imageView.setImageBitmap(data?.extras?.get("data") as Bitmap)
-
-
-
             }
-
         }
 
     val contentValues = ContentValues().apply {

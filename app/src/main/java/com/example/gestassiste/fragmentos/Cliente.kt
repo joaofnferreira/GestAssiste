@@ -13,11 +13,9 @@ import com.google.firebase.database.FirebaseDatabase
 
 class Cliente : Fragment() {
 
-    private lateinit var cemail: EditText
-    private lateinit var ctelemovel: EditText
-    private lateinit var cnome: EditText
-
-    private lateinit var dbRef: DatabaseReference
+    lateinit var cemail: EditText
+    lateinit var ctelemovel: EditText
+    lateinit var cnome: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,10 +30,6 @@ class Cliente : Fragment() {
         cnome = view.findViewById(R.id.cnome)
         ctelemovel = view.findViewById(R.id.ctelemovel)
         cemail = view.findViewById(R.id.cemail)
-
-        //analisar
-        dbRef = FirebaseDatabase.getInstance().getReference("Assist")
-
 
         return view
 
