@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.gestassiste.AssistModel
@@ -19,8 +20,7 @@ class Assistencia : Fragment() {
     private lateinit var cproblema: EditText
     private lateinit var cproblema2: EditText
     private lateinit var corcamento: EditText
-    private lateinit var button_save: EditText
-
+    private lateinit var button_save: Button
 
     private lateinit var dbRef: DatabaseReference
 
