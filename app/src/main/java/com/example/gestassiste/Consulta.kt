@@ -1,6 +1,7 @@
 package com.example.gestassiste
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -51,6 +52,24 @@ class Consulta : AppCompatActivity() {
                     }
                     val mAdapter = AssistAdapter(assistList)
                     assistReciclerView.adapter = mAdapter
+
+                    mAdapter.setOnItemClickListener(object :AssistAdapter.onItemClickListener{
+
+                        override fun onItemClick(position: Int) {
+                            val intent = Intent(this@Consulta, AssistDetails::class.java)
+
+                            //put extras
+                            intent.putExtra("dataassitencia", assistList[position].dataassitencia)
+                            intent.putExtra("problemacliente", assistList[position].problemacliente)
+                            intent.putExtra("resolucao", assistList[position].resolucao)
+                            intent.putExtra("orcamento", assistList[position].orcamento)
+                            intent.putExtra("nome", assistList[position].nome)
+                            intent.putExtra("telemovel", assistList[position].telemovel)
+                            intent.putExtra("email", assistList[position].email)
+                            startActivity(intent)
+                        }
+
+                    })
 
                     assistReciclerView.visibility = View.VISIBLE
                     textViewRecebeDados.visibility = View.GONE
