@@ -68,10 +68,12 @@ class Assistencia : Fragment() {
         val cproblema1 = cproblema.text.toString()
         val cproblema21 = cproblema2.text.toString()
         val corcamento1 = corcamento.text.toString()
+
         //fragmento cliente
         val cnome1 = cnome.text.toString()
         val ctelemovel1 = ctelemovel.text.toString()
         val cemail1 = cemail.text.toString()
+
         //fragmento equipamento
 
         if (editTextDate1.isEmpty()){
@@ -116,10 +118,12 @@ class Assistencia : Fragment() {
                 cproblema.text.clear()
                 cproblema2.text.clear()
                 corcamento.text.clear()
+
                 //fragmento cliente
                 cnome.text.clear()
                 ctelemovel.text.clear()
                 cemail.text.clear()
+
                 //fragmento equipamento
 
 

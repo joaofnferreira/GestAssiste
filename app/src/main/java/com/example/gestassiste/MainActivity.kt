@@ -23,12 +23,13 @@ class MainActivity : AppCompatActivity() {
         buttonClick.setOnClickListener {
             val intent = Intent(this, Assistencia::class.java)
             startActivity(intent)
+        }
 
-            val buttonClick = findViewById<Button>(R.id.consultaassiste)
-            buttonClick.setOnClickListener {
-                val intent = Intent(this, Consulta::class.java)
-                startActivity(intent)
-            }
+        val buttonClick1 = findViewById<Button>(R.id.consultaassiste)
+
+        buttonClick1.setOnClickListener {
+            val intent = Intent(this, Consulta::class.java)
+            startActivity(intent)
         }
     }
     }
