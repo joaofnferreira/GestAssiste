@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation = "vertical"
+    android:padding="10dp">
+
+    <EditText
+        android:id="@+id/dataassitencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Data da assistência"
+        />
+
+
+    <EditText
+        android:id="@+id/problemacliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Problema do cliente"
+        />
+
+    <EditText
+        android:id="@+id/resolucao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Resolução do problema"
+        />
+
+    <EditText
+        android:id="@+id/orcamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Orçamento"
+        />
+
+    <EditText
+        android:id="@+id/nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome"
+        />
+
+    <EditText
+        android:id="@+id/telemovel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Telemóvel"
+        />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        />
+
+
+    <Button
+        android:id="@+id/btnUpdateData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Atualizar"/>
+
+</LinearLayout>

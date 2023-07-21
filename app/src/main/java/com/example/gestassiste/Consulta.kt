@@ -59,6 +59,7 @@ class Consulta : AppCompatActivity() {
                             val intent = Intent(this@Consulta, AssistDetails::class.java)
 
                             //put extras
+                            intent.putExtra("idassitencia", assistList[position].idassitencia)
                             intent.putExtra("dataassitencia", assistList[position].dataassitencia)
                             intent.putExtra("problemacliente", assistList[position].problemacliente)
                             intent.putExtra("resolucao", assistList[position].resolucao)
