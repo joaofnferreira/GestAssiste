@@ -1,5 +1,6 @@
 package com.example.gestassiste
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.widget.Button
@@ -37,6 +38,29 @@ class AssistDetails : AppCompatActivity(){
                 intent.getStringExtra("problemacliente").toString(),
             )
         }
+
+        btnDelete.setOnClickListener{
+            deleteRecord(
+                intent.getStringExtra("idassitencia").toString()
+            )
+        }
+    }
+
+    private fun deleteRecord(
+        id: String
+    ){
+        val dbRef = FirebaseDatabase.getInstance().getReference("Assist").child(id)
+        val mTask = dbRef.removeValue()
+
+        mTask.addOnSuccessListener {
+            Toast.makeText(this,"Assistência eliminada", Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this,Consulta::class.java)
+            finish()
+            startActivity(intent)
+        }.addOnFailureListener{ error ->
+            Toast.makeText(this,"Erro ao eliminar: ${error.message}", Toast.LENGTH_LONG).show()
+        }
     }
 
     private fun  initView(){
@@ -50,6 +74,7 @@ class AssistDetails : AppCompatActivity(){
         tvemail = findViewById(R.id.tvemail)
 
         btnUpdate = findViewById(R.id.btnUpdate)
+        btnDelete = findViewById(R.id.btnDelete)
     }
 
     private fun setValuesToViews(){
