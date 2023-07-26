@@ -31,6 +31,7 @@ class Assistencia : AppCompatActivity() {
             }
 
             override fun onTabUnselected(tab: Tab?) {
+
             }
 
             override fun onTabReselected(tab: Tab?) {

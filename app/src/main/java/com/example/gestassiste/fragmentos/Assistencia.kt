@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.gestassiste.AssistModel
 import com.example.gestassiste.Assistencia
@@ -26,6 +27,9 @@ class Assistencia : Fragment() {
     private lateinit var cemail: EditText
     private lateinit var ctelemovel: EditText
     private lateinit var cnome: EditText
+
+    private lateinit var cserial: EditText
+    private lateinit var cserialteste: TextView
 
 
     private lateinit var dbRef: DatabaseReference
@@ -49,6 +53,8 @@ class Assistencia : Fragment() {
         cnome = view2.findViewById(R.id.cnome)
         ctelemovel = view2.findViewById(R.id.ctelemovel)
         cemail = view2.findViewById(R.id.cemail)
+
+        cserialteste = view.findViewById(R.id.cserialteste)
 
         dbRef = FirebaseDatabase.getInstance().getReference("Assist")
 
@@ -75,6 +81,8 @@ class Assistencia : Fragment() {
         val cemail1 = cemail.text.toString()
 
         //fragmento equipamento
+
+        val cserial1 = cserialteste.text.toString()
 
         if (editTextDate1.isEmpty()){
             editTextDate.error = "Insira o valor"
@@ -107,7 +115,7 @@ class Assistencia : Fragment() {
 
         val assistID = dbRef.push().key!!
 
-        val assist = AssistModel(assistID, editTextDate1, cproblema1, cproblema21, corcamento1, cnome1, ctelemovel1, cemail1)
+        val assist = AssistModel(assistID, editTextDate1, cproblema1, cproblema21, corcamento1, cnome1, ctelemovel1, cemail1,cserial1)
 
         dbRef.child(assistID).setValue(assist)
             .addOnCompleteListener{
@@ -125,6 +133,7 @@ class Assistencia : Fragment() {
                 cemail.text.clear()
 
                 //fragmento equipamento
+                //cserial.text.clear()
 
 
             }.addOnFailureListener {

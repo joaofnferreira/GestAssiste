@@ -10,8 +10,9 @@ data class AssistModel (
         //cliente
         val nome: String? = null,
         val telemovel: String? = null,
-        val email: String? = null
+        val email: String? = null,
         //equipamento
+        val serial: String? = null
 )
 
 

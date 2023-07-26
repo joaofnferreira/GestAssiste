@@ -31,6 +31,7 @@ class Equipamento : Fragment() {
     private lateinit var cmodelo: EditText
     private lateinit var cserial: EditText
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,6 +45,7 @@ class Equipamento : Fragment() {
         cequipamento = view.findViewById(R.id.cequipamento)
         cmodelo = view.findViewById(R.id.cmodelo)
         cserial = view.findViewById(R.id.cserial)
+
 
         photo_button = view.findViewById(R.id.photo_button)
         imageView = view.findViewById(R.id.imageView)
