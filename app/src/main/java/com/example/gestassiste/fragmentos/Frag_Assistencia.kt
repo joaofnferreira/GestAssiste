@@ -8,15 +8,13 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import com.example.gestassiste.AssistModel
-import com.example.gestassiste.Assistencia
 import com.example.gestassiste.R
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 
-class Assistencia : Fragment() {
+class Frag_Assistencia : Fragment() {
 
     private lateinit var editTextDate: EditText
     private lateinit var cproblema: EditText

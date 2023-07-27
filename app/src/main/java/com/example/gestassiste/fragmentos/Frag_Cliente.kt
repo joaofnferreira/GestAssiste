@@ -7,11 +7,9 @@ import android.view.ViewGroup
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.example.gestassiste.R
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 
 
-class Cliente : Fragment() {
+class Frag_Cliente : Fragment() {
 
     lateinit var cemail: EditText
     lateinit var ctelemovel: EditText

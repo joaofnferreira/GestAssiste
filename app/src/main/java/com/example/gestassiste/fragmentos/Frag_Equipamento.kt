@@ -16,12 +16,10 @@ import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.example.gestassiste.R
-import com.google.firebase.database.DatabaseReference
 import android.widget.EditText
-import com.google.firebase.database.FirebaseDatabase
 
 
-class Equipamento : Fragment() {
+class Frag_Equipamento : Fragment() {
 
 
     lateinit var photo_button: Button
