@@ -96,15 +96,7 @@
         tools:layout_editor_absoluteX="-10dp"
         tools:layout_editor_absoluteY="263dp" />
 
-    <Button
-        android:id="@+id/sendBTN"
-        android:layout_width="125dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="508dp"
-        android:text="Próximo"
-        app:layout_constraintTop_toBottomOf="@+id/photo_button"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="221dp" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
