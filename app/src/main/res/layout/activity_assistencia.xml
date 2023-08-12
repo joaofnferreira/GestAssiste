@@ -1,45 +1,269 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Assistencia">
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="842dp">
 
-    <com.google.android.material.tabs.TabLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tab_layout">
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cliente" />
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Equipamento" />
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Assistencia" />
-    </com.google.android.material.tabs.TabLayout>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/view_pager2"
-        android:layout_below="@+id/tab_layout"/>
+        android:background="#F8F2F4"
+        android:backgroundTint="#9ED8DD"
+        tools:context=".fragmentos.Frag_Assistencia"
+        tools:layout_editor_absoluteX="-24dp"
+        tools:layout_editor_absoluteY="391dp">
 
 
+        <TextView
+            android:id="@+id/orcamento"
+            android:layout_width="86dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="108dp"
+            android:layout_marginTop="468dp"
+            android:text="Orçamento : "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
+        <TextView
+            android:id="@+id/problemacliente2"
+            android:layout_width="162dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="292dp"
+            android:text="Resolução"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <AutoCompleteTextView
+            android:id="@+id/cproblema2"
+            android:layout_width="245dp"
+            android:layout_height="109dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="324dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dateinicio"
+            android:layout_width="207dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="16dp"
+            android:text="Data Assistencia "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextDate"
+            android:layout_width="238dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:inputType="date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/problemacliente"
+            android:layout_width="162dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="116dp"
+            android:text="Problema Cliente "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <AutoCompleteTextView
+            android:id="@+id/cproblema"
+            android:layout_width="245dp"
+            android:layout_height="109dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="160dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/corcamento"
+            android:layout_width="125dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="192dp"
+            android:layout_marginTop="452dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/cemail"
+            android:layout_width="226dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="644dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/ctelemovel"
+            android:layout_width="217dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="576dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/cnome"
+            android:layout_width="219dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="512dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nomecliente"
+            android:layout_width="49dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="528dp"
+            android:text="Nome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/emailcliente"
+            android:layout_width="49dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="680dp"
+
+            android:text="Email :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/telemovelcliente"
+            android:layout_width="72dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="592dp"
+            android:text="Telemovel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="114dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="292dp"
+            android:text="Guardar Assistencia"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.939" />
+
+        <EditText
+            android:id="@+id/cequipamento"
+            android:layout_width="255dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="124dp"
+            android:layout_marginTop="796dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/Equipamento"
+            android:layout_width="112dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="804dp"
+            android:text="Equipamento :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/cserial"
+            android:layout_width="219dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="124dp"
+            android:layout_marginTop="936dp"
+
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/serial"
+            android:layout_width="72dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="948dp"
+            android:text="Serial :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/cmodelo"
+            android:layout_width="219dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="876dp"
+
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/Modelo"
+            android:layout_width="72dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="892dp"
+            android:text="Modelo :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
+        <Button
+            android:id="@+id/photo_button"
+            android:layout_width="125dp"
+            android:layout_height="78dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="1416dp"
+            android:text="Tirar Foto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/imageView"
 
 
+            android:layout_width="431dp"
+            android:layout_height="300dp"
+            android:layout_below="@id/photo_button"
+            tools:layout_editor_absoluteX="-10dp"
+            tools:layout_editor_absoluteY="1003dp" />
 
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
