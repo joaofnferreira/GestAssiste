@@ -55,6 +55,27 @@
         android:hint="Email"
         />
 
+    <EditText
+        android:id="@+id/equipamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Equipamento"
+        />
+
+    <EditText
+        android:id="@+id/modelo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Modelo"
+        />
+
+    <EditText
+        android:id="@+id/serial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Serial"
+        />
+
 
     <Button
         android:id="@+id/btnUpdateData"

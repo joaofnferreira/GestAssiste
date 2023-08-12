@@ -46,7 +46,6 @@
                 android:value="" />
 
         </activity>
-        <activity android:name=".Assistencia_old"></activity>
         <activity android:name=".Assistencia"></activity>
         <activity android:name=".Consulta"></activity>
         <activity android:name=".AssistDetails"></activity>

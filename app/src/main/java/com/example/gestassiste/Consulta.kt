@@ -67,6 +67,9 @@ class Consulta : AppCompatActivity() {
                             intent.putExtra("nome", assistList[position].nome)
                             intent.putExtra("telemovel", assistList[position].telemovel)
                             intent.putExtra("email", assistList[position].email)
+                            intent.putExtra("equipamento", assistList[position].equipamento)
+                            intent.putExtra("modelo", assistList[position].modelo)
+                            intent.putExtra("serial", assistList[position].serial)
                             startActivity(intent)
                         }
 

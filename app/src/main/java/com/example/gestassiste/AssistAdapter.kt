@@ -28,8 +28,8 @@ class AssistAdapter (private val assistList: ArrayList<AssistModel>):
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentAssist = assistList[position]
-        //dps mudar para o nome do cliente
-        holder.tvAssistName.text = currentAssist.problemacliente
+        //Mostra na lista o nome do cliente
+        holder.tvAssistName.text = currentAssist.nome
     }
 
     override fun getItemCount(): Int {

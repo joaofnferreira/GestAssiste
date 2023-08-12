@@ -22,6 +22,10 @@ class AssistDetails : AppCompatActivity(){
     private lateinit var tvnome: TextView
     private lateinit var tvtelemovel: TextView
     private lateinit var tvemail: TextView
+    private lateinit var tvequipamento: TextView
+    private lateinit var tvmodelo: TextView
+    private lateinit var tvserial: TextView
+
     private lateinit var btnUpdate: Button
     private lateinit var btnDelete: Button
 
@@ -35,7 +39,7 @@ class AssistDetails : AppCompatActivity(){
         btnUpdate.setOnClickListener{
             openUpdateDialog(
                 intent.getStringExtra("idassitencia").toString(),
-                intent.getStringExtra("problemacliente").toString(),
+                intent.getStringExtra("nome").toString(),
             )
         }
 
@@ -69,9 +73,14 @@ class AssistDetails : AppCompatActivity(){
         tvproblemacliente = findViewById(R.id.tvproblemacliente)
         tvresolucao = findViewById(R.id.tvresolucao)
         tvorcamento = findViewById(R.id.tvorcamento)
+
         tvnome = findViewById(R.id.tvnome)
         tvtelemovel = findViewById(R.id.tvtelemovel)
         tvemail = findViewById(R.id.tvemail)
+
+        tvequipamento = findViewById(R.id.tvequipamento)
+        tvmodelo = findViewById(R.id.tvmodelo)
+        tvserial = findViewById(R.id.tvserial)
 
         btnUpdate = findViewById(R.id.btnUpdate)
         btnDelete = findViewById(R.id.btnDelete)
@@ -83,14 +92,19 @@ class AssistDetails : AppCompatActivity(){
         tvproblemacliente.text = intent.getStringExtra("problemacliente")
         tvresolucao.text = intent.getStringExtra("resolucao")
         tvorcamento.text = intent.getStringExtra("orcamento")
+
         tvnome.text = intent.getStringExtra("nome")
         tvtelemovel.text = intent.getStringExtra("telemovel")
         tvemail.text = intent.getStringExtra("email")
+
+        tvequipamento.text = intent.getStringExtra("equipamento")
+        tvmodelo.text = intent.getStringExtra("modelo")
+        tvserial.text = intent.getStringExtra("serial")
     }
 
     private fun openUpdateDialog(
         id: String,
-        problema: String
+        nome: String
     ){
         val mDialog = AlertDialog.Builder(this)
         val inflater = layoutInflater
@@ -102,9 +116,14 @@ class AssistDetails : AppCompatActivity(){
         val etproblemacliente = mDialogView.findViewById<EditText>(R.id.problemacliente)
         val etresolucao = mDialogView.findViewById<EditText>(R.id.resolucao)
         val etorcamento = mDialogView.findViewById<EditText>(R.id.orcamento)
+
         val etnome = mDialogView.findViewById<EditText>(R.id.nome)
         val ettelemovel = mDialogView.findViewById<EditText>(R.id.telemovel)
         val etemail = mDialogView.findViewById<EditText>(R.id.email)
+
+        val etequipamento = mDialogView.findViewById<EditText>(R.id.equipamento)
+        val etmodelo = mDialogView.findViewById<EditText>(R.id.modelo)
+        val etserial = mDialogView.findViewById<EditText>(R.id.serial)
 
         val btnUpdateData = mDialogView.findViewById<Button>(R.id.btnUpdateData)
 
@@ -113,12 +132,17 @@ class AssistDetails : AppCompatActivity(){
         etproblemacliente.setText(intent.getStringExtra("problemacliente").toString())
         etresolucao.setText(intent.getStringExtra("resolucao").toString())
         etorcamento.setText(intent.getStringExtra("orcamento").toString())
+
         etnome.setText(intent.getStringExtra("nome").toString())
         ettelemovel.setText(intent.getStringExtra("telemovel").toString())
         etemail.setText(intent.getStringExtra("email").toString())
 
-        //qd tivermos o nome, mudar isto para nome
-        mDialog.setTitle("A atualizar a assistência de $problema")
+        etequipamento.setText(intent.getStringExtra("equipamento").toString())
+        etmodelo.setText(intent.getStringExtra("modelo").toString())
+        etserial.setText(intent.getStringExtra("serial").toString())
+
+
+        mDialog.setTitle("A atualizar a assistência de $nome")
 
         var alertDialog = mDialog.create()
         alertDialog.show()
@@ -131,9 +155,14 @@ class AssistDetails : AppCompatActivity(){
                 etproblemacliente.text.toString(),
                 etresolucao.text.toString(),
                 etorcamento.text.toString(),
+
                 etnome.text.toString(),
                 ettelemovel.text.toString(),
-                etemail.text.toString()
+                etemail.text.toString(),
+
+                etequipamento.text.toString(),
+                etmodelo.text.toString(),
+                etserial.text.toString()
             )
             Toast.makeText(applicationContext,"Dados da assistência atualizados", Toast.LENGTH_LONG).show()
 
@@ -142,9 +171,14 @@ class AssistDetails : AppCompatActivity(){
             tvproblemacliente.text = etproblemacliente.text.toString()
             tvresolucao.text = etresolucao.text.toString()
             tvorcamento.text = etorcamento.text.toString()
+
             tvnome.text = etnome.text.toString()
             tvtelemovel.text = ettelemovel.text.toString()
             tvemail.text = etemail.text.toString()
+
+            tvequipamento.text = etequipamento.text.toString()
+            tvmodelo.text = etmodelo.text.toString()
+            tvserial.text = etserial.text.toString()
 
             alertDialog.dismiss()
         }
@@ -159,10 +193,13 @@ class AssistDetails : AppCompatActivity(){
         orcamento: String,
         nome: String,
         telemovel: String,
-        email: String
+        email: String,
+        equipamento: String,
+        modelo: String,
+        serial: String
     ){
         val dbRef = FirebaseDatabase.getInstance().getReference("Assist").child(id)
-        val assistInfo = AssistModel(id, dataassitencia,problemacliente,resolucao,orcamento,nome,telemovel,email)
+        val assistInfo = AssistModel(id, dataassitencia,problemacliente,resolucao,orcamento,nome,telemovel,email,equipamento,modelo,serial)
         dbRef.setValue(assistInfo)
     }
 }

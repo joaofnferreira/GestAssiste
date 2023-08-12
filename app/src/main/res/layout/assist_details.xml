@@ -154,6 +154,60 @@
             />
     </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="Equipamento:"
+                />
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:id="@+id/tvequipamento"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="Modelo:"
+                />
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:id="@+id/tvmodelo"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="Serial:"
+                />
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:id="@+id/tvserial"
+                />
+        </LinearLayout>
+
         <Button
             android:id="@+id/btnUpdate"
             android:layout_width="wrap_content"
