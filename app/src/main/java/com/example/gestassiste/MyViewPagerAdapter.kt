@@ -10,14 +10,14 @@ import com.example.gestassiste.fragmentos.Frag_Equipamento
 
 class MyViewPagerAdapter (fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
     override fun getItemCount(): Int {
-        return 3
+        return 1
     }
     override fun createFragment(position: Int): Fragment {
         return when(position) {
-            0 -> Frag_Cliente()
-            1 -> Frag_Equipamento()
-            2 -> Frag_Assistencia()
-            else -> Frag_Cliente()
+            //0 -> Frag_Cliente()
+            //1 -> Frag_Equipamento()
+            0 -> Frag_Assistencia()
+            else -> Frag_Assistencia()
         }
     }
 }
