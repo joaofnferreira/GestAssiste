@@ -255,13 +255,13 @@
 
         <ImageView
             android:id="@+id/imageView"
-
-
             android:layout_width="431dp"
             android:layout_height="300dp"
-            android:layout_below="@id/photo_button"
+            app:layout_constraintTop_toBottomOf="@id/cserial"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteX="-10dp"
-            tools:layout_editor_absoluteY="1003dp" />
+            tools:layout_editor_absoluteY="1003dp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
