@@ -1,22 +1,20 @@
 package com.example.gestassiste
 
-import android.Manifest
 import android.app.Activity
-import android.content.ContentValues
 import android.content.Intent
 import android.graphics.Bitmap
-import android.os.Build
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-
+import android.util.Base64
+import java.io.ByteArrayOutputStream
 
 
 class Assistencia : AppCompatActivity() {
@@ -152,6 +150,15 @@ class Assistencia : AppCompatActivity() {
 
         val assistID = dbRef.push().key!!
 
+        //Capturar a imagem
+        val imageBitmap = (imageView.drawable as? BitmapDrawable)?.bitmap
+
+        val imageString = if (imageBitmap != null) {
+            convertBitmapToBase64(imageBitmap)
+        } else {
+            ""
+        }
+
         val assist = AssistModel(
             assistID,
             editTextDate1,
@@ -163,7 +170,8 @@ class Assistencia : AppCompatActivity() {
             cemail1,
             cequipamento1,
             cmodelo1,
-            cserial1
+            cserial1,
+            imageString
         )
 
 
@@ -192,6 +200,14 @@ class Assistencia : AppCompatActivity() {
                 //Toast.makeText(this, "Erro: ${err.message}", Toast.LENGTH_LONG).show()
             }
 
+    }
+
+    //Função para converter a imagem
+    private fun convertBitmapToBase64(bitmap: Bitmap): String {
+        val byteArrayOutputStream = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
+        val byteArray = byteArrayOutputStream.toByteArray()
+        return Base64.encodeToString(byteArray, Base64.DEFAULT)
     }
 
     fun capturePhoto() {

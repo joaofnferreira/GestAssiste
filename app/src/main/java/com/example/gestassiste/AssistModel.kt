@@ -14,7 +14,8 @@ data class AssistModel (
         //equipamento
         val equipamento: String? = null,
         val modelo: String? = null,
-        val serial: String? = null
+        val serial: String? = null,
+        var imageString: String? = null
 )
 
 
