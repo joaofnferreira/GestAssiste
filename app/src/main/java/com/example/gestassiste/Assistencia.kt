@@ -1,21 +1,20 @@
 package com.example.gestassiste
 
-import android.Manifest
 import android.app.Activity
-import android.content.ContentValues
 import android.content.Intent
 import android.graphics.Bitmap
-import android.os.Build
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import android.util.Base64
+import java.io.ByteArrayOutputStream
 
 
 class Assistencia : AppCompatActivity() {
@@ -65,7 +64,7 @@ class Assistencia : AppCompatActivity() {
 
         dbRef = FirebaseDatabase.getInstance().getReference("Assist")
 
-        button_save.setOnClickListener{
+        button_save.setOnClickListener {
             saveEquipamento()
         }
 
@@ -74,11 +73,10 @@ class Assistencia : AppCompatActivity() {
         }
 
 
-
     }
 
 
-    private fun saveEquipamento(){
+    private fun saveEquipamento() {
 
         //receber valores
 
@@ -98,65 +96,87 @@ class Assistencia : AppCompatActivity() {
         val cmodelo1 = cmodelo.text.toString()
         val cserial1 = cserial.text.toString()
 
-        if (editTextDate1.isEmpty()){
+        if (editTextDate1.isEmpty()) {
             editTextDate.error = "Insira o valor"
             return
         }
 
-        if (cproblema1.isEmpty()){
+        if (cproblema1.isEmpty()) {
             cproblema.error = "Insira o valor"
             return
         }
 
-        if (cproblema21.isEmpty()){
+        if (cproblema21.isEmpty()) {
             cproblema2.error = "Insira o valor"
             return
         }
 
-        if (corcamento1.isEmpty()){
+        if (corcamento1.isEmpty()) {
             corcamento.error = "Insira o valor"
             return
         }
 
         //fragmento cliente
-        if (cnome1.isEmpty()){
+        if (cnome1.isEmpty()) {
             cnome.error = "Insira o valor"
             return
         }
 
-        if (ctelemovel1.isEmpty()){
+        if (ctelemovel1.isEmpty()) {
             ctelemovel.error = "Insira o valor"
             return
         }
 
-        if (cemail1.isEmpty()){
+        if (cemail1.isEmpty()) {
             cemail.error = "Insira o valor"
             return
         }
 
         //fragmento equipamento
-        if (cequipamento1.isEmpty()){
+        if (cequipamento1.isEmpty()) {
             cequipamento.error = "Insira o valor"
             return
         }
 
-        if (cmodelo1.isEmpty()){
+        if (cmodelo1.isEmpty()) {
             cmodelo.error = "Insira o valor"
             return
         }
 
-        if (cserial1.isEmpty()){
+        if (cserial1.isEmpty()) {
             cserial.error = "Insira o valor"
             return
         }
 
         val assistID = dbRef.push().key!!
 
-        val assist = AssistModel(assistID, editTextDate1, cproblema1, cproblema21, corcamento1, cnome1, ctelemovel1, cemail1, cequipamento1, cmodelo1, cserial1)
+        //Capturar a imagem
+        val imageBitmap = (imageView.drawable as? BitmapDrawable)?.bitmap
+
+        val imageString = if (imageBitmap != null) {
+            convertBitmapToBase64(imageBitmap)
+        } else {
+            ""
+        }
+
+        val assist = AssistModel(
+            assistID,
+            editTextDate1,
+            cproblema1,
+            cproblema21,
+            corcamento1,
+            cnome1,
+            ctelemovel1,
+            cemail1,
+            cequipamento1,
+            cmodelo1,
+            cserial1,
+            imageString
+        )
 
 
         dbRef.child(assistID).setValue(assist)
-            .addOnCompleteListener{
+            .addOnCompleteListener {
                 //Toast.makeText(this,"teste",Toast.LENGTH_LONG).show()
 
                 //fragmento assistência
@@ -182,37 +202,29 @@ class Assistencia : AppCompatActivity() {
 
     }
 
-    ///////////////////////////////////////////////////////
+    //Função para converter a imagem
+    private fun convertBitmapToBase64(bitmap: Bitmap): String {
+        val byteArrayOutputStream = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
+        val byteArray = byteArrayOutputStream.toByteArray()
+        return Base64.encodeToString(byteArray, Base64.DEFAULT)
+    }
+
     fun capturePhoto() {
         val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         resultLauncher.launch(cameraIntent)
     }
+
     var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            val data: Intent? = result.data
-            imageView.setImageBitmap(data?.extras?.get("data") as Bitmap)
-        }
-    }
-
-    val contentValues = ContentValues().apply {
-        //put(MediaStore.MediaColumns.DISPLAY_NAME)
-        put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
-        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
-            put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/CameraX-Image")
-        }
-    }
-
-    companion object {
-        private const val TAG = "CameraXApp"
-        private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
-        private const val REQUEST_CODE_PERMISSIONS = 10
-        private val REQUIRED_PERMISSIONS =
-            mutableListOf (
-                Manifest.permission.CAMERA).apply {
-                if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) {
-                    add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            if (result.resultCode == Activity.RESULT_OK) {
+                val data: Intent? = result.data
+                val imageBitmap = data?.extras?.get("data") as Bitmap?
+                if (imageBitmap != null) {
+                    imageView.setImageBitmap(imageBitmap)
                 }
-            }.toTypedArray()
-    }
+            }
+        }
+
+
 
 }

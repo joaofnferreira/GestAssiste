@@ -1,10 +1,15 @@
 package com.example.gestassiste
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Base64
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -25,6 +30,8 @@ class AssistDetails : AppCompatActivity(){
     private lateinit var tvequipamento: TextView
     private lateinit var tvmodelo: TextView
     private lateinit var tvserial: TextView
+    private lateinit var tvimageString: TextView
+    lateinit var apresentaImagem: ImageView
 
     private lateinit var btnUpdate: Button
     private lateinit var btnDelete: Button
@@ -81,6 +88,8 @@ class AssistDetails : AppCompatActivity(){
         tvequipamento = findViewById(R.id.tvequipamento)
         tvmodelo = findViewById(R.id.tvmodelo)
         tvserial = findViewById(R.id.tvserial)
+        tvimageString = findViewById(R.id.tvimageString)
+        apresentaImagem = findViewById(R.id.apresentaImagem)
 
         btnUpdate = findViewById(R.id.btnUpdate)
         btnDelete = findViewById(R.id.btnDelete)
@@ -100,6 +109,36 @@ class AssistDetails : AppCompatActivity(){
         tvequipamento.text = intent.getStringExtra("equipamento")
         tvmodelo.text = intent.getStringExtra("modelo")
         tvserial.text = intent.getStringExtra("serial")
+        tvimageString.text = intent.getStringExtra("imageString")
+
+        // Receber a string do intent
+        val imageString = intent.getStringExtra("imageString")
+
+        if (imageString.isNullOrEmpty()) {
+            // Se a imageString estiver vazia
+            apresentaImagem.visibility = View.GONE
+        } else {
+            // Conversão
+            val imageBitmap = convertBase64ToBitmap(imageString)
+
+
+            if (imageBitmap != null) {
+                apresentaImagem.setImageBitmap(imageBitmap)
+                apresentaImagem.visibility = View.VISIBLE
+                tvimageString.visibility = View.GONE
+            } else {
+                apresentaImagem.visibility = View.GONE
+            }
+        }
+    }
+
+    private fun convertBase64ToBitmap(base64String: String): Bitmap? {
+        return try {
+            val decodedBytes = Base64.decode(base64String, Base64.DEFAULT)
+            BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
+        } catch (e: Exception) {
+            null
+        }
     }
 
     private fun openUpdateDialog(
