@@ -208,6 +208,32 @@
                 />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="Imagem:"
+                />
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:id="@+id/tvimageString"
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/apresentaImagem"
+            android:layout_width="431dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            tools:layout_editor_absoluteX="-10dp"
+            tools:layout_editor_absoluteY="1003dp"/>
+
         <Button
             android:id="@+id/btnUpdate"
             android:layout_width="wrap_content"

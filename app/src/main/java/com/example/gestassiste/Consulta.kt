@@ -70,6 +70,7 @@ class Consulta : AppCompatActivity() {
                             intent.putExtra("equipamento", assistList[position].equipamento)
                             intent.putExtra("modelo", assistList[position].modelo)
                             intent.putExtra("serial", assistList[position].serial)
+                            intent.putExtra("imageString", assistList[position].imageString)
                             startActivity(intent)
                         }
 
