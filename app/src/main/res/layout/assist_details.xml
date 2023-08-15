@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#9ED8DD">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,140 +20,13 @@
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
-                android:text="ID da assistência:"
-                />
+                android:text="ID da assistência:" />
+
             <TextView
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
                 android:id="@+id/tvidassitencia"
-                />
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
         </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:text="Data da assistência:"
-        />
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:id="@+id/tvdataassitencia"
-        />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:text="Problema do cliente:"
-            />
-
-        <TextView
-            android:id="@+id/tvproblemacliente"
-            android:layout_width="150dp"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:text="Resolução:"
-            />
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:id="@+id/tvresolucao"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:text="Orçamento:"
-            />
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:id="@+id/tvorcamento"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:text="Nome:"
-            />
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:id="@+id/tvnome"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:text="Telemóvel:"
-            />
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:id="@+id/tvtelemovel"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:text="Email:"
-            />
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
-            android:id="@+id/tvemail"
-            />
-    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -163,13 +37,131 @@
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
-                android:text="Equipamento:"
-                />
+                android:text="Data da assistência:" />
+
+            <TextView
+                android:id="@+id/tvdataassitencia"
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
+                android:text="Problema do cliente:" />
+
+            <TextView
+                android:id="@+id/tvproblemacliente"
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="Resolução:" />
+
+            <TextView
+                android:id="@+id/tvresolucao"
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="Orçamento:" />
+
+            <TextView
+                android:id="@+id/tvorcamento"
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="Nome:" />
+
+            <TextView
+                android:id="@+id/tvnome"
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="Telemóvel:" />
+
+            <TextView
+                android:id="@+id/tvtelemovel"
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="Email:" />
+
+            <TextView
+                android:id="@+id/tvemail"
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:text="Equipamento:" />
+
+            <TextView
                 android:id="@+id/tvequipamento"
-                />
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
         </LinearLayout>
 
         <LinearLayout
@@ -181,13 +173,12 @@
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
-                android:text="Modelo:"
-                />
+                android:text="Modelo:" />
+
             <TextView
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
                 android:id="@+id/tvmodelo"
-                />
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
         </LinearLayout>
 
         <LinearLayout
@@ -199,13 +190,12 @@
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
-                android:text="Serial:"
-                />
+                android:text="Serial:" />
+
             <TextView
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
                 android:id="@+id/tvserial"
-                />
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
         </LinearLayout>
 
         <LinearLayout
@@ -217,13 +207,12 @@
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
-                android:text="Imagem:"
-                />
+                android:text="Imagem:" />
+
             <TextView
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
                 android:id="@+id/tvimageString"
-                />
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
         </LinearLayout>
 
         <ImageView
@@ -232,34 +221,27 @@
             android:layout_height="200dp"
             android:layout_marginTop="16dp"
             tools:layout_editor_absoluteX="-10dp"
-            tools:layout_editor_absoluteY="1003dp"/>
+            tools:layout_editor_absoluteY="1003dp" />
 
         <Button
             android:id="@+id/btnUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Atualizar"
+            tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="77dp"
-            tools:layout_editor_absoluteY="492dp"
-            tools:ignore="MissingConstraints" />
+            tools:layout_editor_absoluteY="492dp" />
 
         <Button
             android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Apagar"
+            tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="227dp"
-            tools:layout_editor_absoluteY="492dp"
-            tools:ignore="MissingConstraints" />
+            tools:layout_editor_absoluteY="492dp" />
 
     </LinearLayout>
-
-
-
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

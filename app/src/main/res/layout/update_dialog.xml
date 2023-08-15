@@ -2,79 +2,70 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation = "vertical"
+    android:background="#9ED8DD"
+    android:orientation="vertical"
     android:padding="10dp">
 
     <EditText
         android:id="@+id/dataassitencia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Data da assistência"
-        />
+        android:hint="Data da assistência" />
 
 
     <EditText
         android:id="@+id/problemacliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Problema do cliente"
-        />
+        android:hint="Problema do cliente" />
 
     <EditText
         android:id="@+id/resolucao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Resolução do problema"
-        />
+        android:hint="Resolução do problema" />
 
     <EditText
         android:id="@+id/orcamento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Orçamento"
-        />
+        android:hint="Orçamento" />
 
     <EditText
         android:id="@+id/nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome"
-        />
+        android:hint="Nome" />
 
     <EditText
         android:id="@+id/telemovel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Telemóvel"
-        />
+        android:hint="Telemóvel" />
 
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        />
+        android:hint="Email" />
 
     <EditText
         android:id="@+id/equipamento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Equipamento"
-        />
+        android:hint="Equipamento" />
 
     <EditText
         android:id="@+id/modelo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Modelo"
-        />
+        android:hint="Modelo" />
 
     <EditText
         android:id="@+id/serial"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Serial"
-        />
+        android:hint="Serial" />
 
 
     <Button
@@ -83,6 +74,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Atualizar"/>
+        android:text="Atualizar" />
 
 </LinearLayout>
