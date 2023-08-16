@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fillViewport="true"
+    android:gravity="center"
+
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="842dp">
 
@@ -15,253 +17,292 @@
         android:layout_height="wrap_content"
         android:background="#F8F2F4"
         android:backgroundTint="#9ED8DD"
-        tools:context=".fragmentos.Frag_Assistencia"
+        android:gravity="center"
+        app:layoutDescription="@xml/activity_assistencia_xml_relativelayout_scene"
         tools:layout_editor_absoluteX="-24dp"
         tools:layout_editor_absoluteY="391dp">
 
 
         <TextView
             android:id="@+id/orcamento"
-            android:layout_width="86dp"
-            android:layout_height="17dp"
-            android:layout_marginStart="108dp"
-            android:layout_marginTop="468dp"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="308dp"
             android:text="Orçamento : "
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <TextView
             android:id="@+id/problemacliente2"
-            android:layout_width="162dp"
-            android:layout_height="19dp"
-            android:layout_marginStart="92dp"
-            android:layout_marginTop="292dp"
-            android:text="Resolução"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="184dp"
+            android:text="Resolução :"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <AutoCompleteTextView
             android:id="@+id/cproblema2"
-            android:layout_width="245dp"
-            android:layout_height="109dp"
-            android:layout_marginStart="92dp"
-            android:layout_marginTop="324dp"
+            android:layout_width="230dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="208dp"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/dateinicio"
-            android:layout_width="207dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="92dp"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
             android:layout_marginTop="16dp"
             android:text="Data Assistencia "
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editTextDate"
-            android:layout_width="238dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="92dp"
-            android:layout_marginTop="40dp"
+            android:layout_width="230dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="36dp"
             android:ems="10"
             android:inputType="date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/problemacliente"
-            android:layout_width="162dp"
-            android:layout_height="19dp"
-            android:layout_marginStart="92dp"
-            android:layout_marginTop="116dp"
-            android:text="Problema Cliente "
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="84dp"
+            android:text="Problema Cliente : "
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
+
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <AutoCompleteTextView
             android:id="@+id/cproblema"
-            android:layout_width="245dp"
-            android:layout_height="109dp"
-            android:layout_marginStart="92dp"
-            android:layout_marginTop="160dp"
+            android:layout_width="230dp"
+            android:layout_height="65dp"
+
+            android:layout_marginTop="116dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/corcamento"
-            android:layout_width="125dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="192dp"
-            android:layout_marginTop="452dp"
+            android:layout_width="230dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="328dp"
             android:ems="10"
             android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/cemail"
-            android:layout_width="226dp"
-            android:layout_height="61dp"
-            android:layout_marginStart="92dp"
-            android:layout_marginTop="644dp"
+            android:layout_width="230dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="548dp"
             android:ems="10"
             android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/ctelemovel"
-            android:layout_width="217dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="576dp"
+            android:layout_width="230dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="476dp"
             android:ems="10"
             android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/cnome"
-            android:layout_width="219dp"
+            android:layout_width="230dp"
             android:layout_height="38dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="512dp"
+            android:layout_marginTop="404dp"
             android:ems="10"
             android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/nomecliente"
-            android:layout_width="49dp"
-            android:layout_height="16dp"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="528dp"
-            android:text="Nome"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="384dp"
+            android:text="Nome :"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <TextView
             android:id="@+id/emailcliente"
-            android:layout_width="49dp"
-            android:layout_height="15dp"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="680dp"
-
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="524dp"
             android:text="Email :"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/telemovelcliente"
-            android:layout_width="72dp"
-            android:layout_height="18dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="592dp"
-            android:text="Telemovel"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="456dp"
+            android:text="Telemovel :"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <Button
-            android:id="@+id/button_save"
-            android:layout_width="114dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="292dp"
-            android:text="Guardar Assistencia"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.939" />
-
         <EditText
             android:id="@+id/cequipamento"
-            android:layout_width="255dp"
-            android:layout_height="37dp"
-            android:layout_marginStart="124dp"
-            android:layout_marginTop="796dp"
+            android:layout_width="230dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="616dp"
             android:ems="10"
             android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/Equipamento"
-            android:layout_width="112dp"
-            android:layout_height="18dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="804dp"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="596dp"
             android:text="Equipamento :"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <EditText
             android:id="@+id/cserial"
-            android:layout_width="219dp"
+            android:layout_width="230dp"
             android:layout_height="38dp"
-            android:layout_marginStart="124dp"
-            android:layout_marginTop="936dp"
-
+            android:layout_marginTop="756dp"
             android:ems="10"
             android:inputType="textPersonName"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/serial"
-            android:layout_width="72dp"
-            android:layout_height="18dp"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="948dp"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="736dp"
             android:text="Serial :"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/cmodelo"
-            android:layout_width="219dp"
+            android:layout_width="230dp"
             android:layout_height="38dp"
-            android:layout_marginStart="136dp"
-            android:layout_marginTop="876dp"
+            android:layout_marginTop="688dp"
 
             android:ems="10"
             android:inputType="textPersonName"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/Modelo"
-            android:layout_width="72dp"
-            android:layout_height="18dp"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="892dp"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="664dp"
             android:text="Modelo :"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <Button
-            android:id="@+id/photo_button"
-            android:layout_width="125dp"
-            android:layout_height="78dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="1416dp"
-            android:text="Tirar Foto"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="431dp"
-            android:layout_height="300dp"
-            app:layout_constraintTop_toBottomOf="@id/cserial"
-            android:layout_marginTop="16dp"
+            android:layout_width="401dp"
+            android:layout_height="228dp"
+            android:layout_marginTop="802dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteX="-10dp"
-            tools:layout_editor_absoluteY="1003dp"/>
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/photo_button"
+            android:layout_width="148dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="1054dp"
+            android:text="Tirar Foto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="148dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="1154dp"
+            android:text="Guardar Assistencia"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
