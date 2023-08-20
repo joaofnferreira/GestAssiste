@@ -26,9 +26,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="71dp"
-            tools:layout_editor_absoluteY="-347dp">
+            tools:layout_editor_absoluteY="-289dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -425,10 +426,23 @@
                 tools:layout_editor_absoluteY="1003dp" />
 
             <Button
+                android:id="@+id/btnUpdate"
+
+                android:layout_width="148dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="124dp"
+                android:layout_marginTop="1dp"
+                android:text="ATUALIZAR"
+
+
+                />
+
+            <Button
                 android:id="@+id/btnDelete"
                 android:layout_width="148dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="114dp"
+                android:layout_marginLeft="124dp"
+
 
                 android:text="Apagar"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -438,16 +452,6 @@
 
                 tools:ignore="MissingConstraints" />
 
-            <Button
-                android:id="@+id/btnUpdate"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="150dp"
-
-                android:text="ATUALIZAR"
-
-
-                />
 
         </LinearLayout>
 
