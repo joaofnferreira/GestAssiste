@@ -405,7 +405,8 @@
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
-                    android:text="Imagem:"
+                    android:text="Foto:"
+
                     android:textColor="@color/black"
                     android:textStyle="bold" />
 
@@ -419,7 +420,7 @@
                 android:id="@+id/apresentaImagem"
                 android:layout_width="398dp"
                 android:layout_height="347dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="1dp"
                 tools:layout_editor_absoluteX="-10dp"
                 tools:layout_editor_absoluteY="1003dp" />
 
@@ -439,19 +440,15 @@
 
             <Button
                 android:id="@+id/btnUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="150dp"
 
-
-                android:baselineAligned="false"
                 android:text="ATUALIZAR"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
 
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="MissingConstraints" />
+
+                />
+
         </LinearLayout>
 
 

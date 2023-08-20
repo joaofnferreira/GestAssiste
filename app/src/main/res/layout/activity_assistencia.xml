@@ -302,11 +302,15 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="401dp"
-            android:layout_height="278dp"
+            android:layout_height="290dp"
             android:layout_marginTop="802dp"
 
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true"
+
+            android:adjustViewBounds="false"
+           android:cropToPadding="false"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="2003dp"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
