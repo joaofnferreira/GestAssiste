@@ -30,7 +30,7 @@
         android:layout_width="230dp"
         android:layout_height="20dp"
         android:layout_marginTop="40dp"
-        android:text="Joao Ferreira Nº 19149"
+        android:text="João Ferreira Nº 19149"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -61,7 +61,7 @@
         android:layout_marginStart="204dp"
 
         android:layout_marginTop="144dp"
-        android:text="Consultar Assistencia"
+        android:text="Consultar Assistência"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,7 +71,7 @@
         android:layout_height="92dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="144dp"
-        android:text="Criar Assistencia"
+        android:text="Criar Assistência"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
