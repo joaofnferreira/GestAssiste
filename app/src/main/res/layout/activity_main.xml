@@ -11,26 +11,67 @@
     tools:context=".MainActivity">
 
 
-    <Button
-        android:id="@+id/criarassistencia"
-        android:layout_width="182dp"
-        android:layout_height="92dp"
-        android:layout_marginStart="4dp"
-
-        android:layout_marginTop="124dp"
-
-        android:text="Criar Assistencia"
+    <TextView
+        android:id="@+id/autores"
+        android:layout_width="230dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="14dp"
+        android:text="Elaborado por:"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/autorJ"
+        android:layout_width="230dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="40dp"
+        android:text="João Ferreira Nº 19149"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/autorR"
+        android:layout_width="230dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="60dp"
+        android:text="Rui Marques Nº 20230"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <Button
         android:id="@+id/consultaassiste"
         android:layout_width="172dp"
-        android:layout_height="91dp"
-        android:layout_marginStart="208dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="204dp"
 
-        android:layout_marginTop="124dp"
-        android:text="Consultar Assistencia"
+        android:layout_marginTop="144dp"
+        android:text="Consultar Assistência"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/criarassistencia"
+        android:layout_width="172dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="144dp"
+        android:text="Criar Assistência"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,8 +79,8 @@
         android:id="@+id/imageView3"
         android:layout_width="299dp"
         android:layout_height="283dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="44dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/assiste" />

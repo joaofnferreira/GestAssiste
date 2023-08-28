@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import android.util.Base64
+import android.view.View
 import java.io.ByteArrayOutputStream
 
 
@@ -195,7 +196,7 @@ class Assistencia : AppCompatActivity() {
                 cmodelo.text.clear()
                 cserial.text.clear()
 
-
+                imageView.visibility = View.GONE
             }.addOnFailureListener {
                 //Toast.makeText(this, "Erro: ${err.message}", Toast.LENGTH_LONG).show()
             }
