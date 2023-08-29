@@ -98,54 +98,54 @@ class Assistencia : AppCompatActivity() {
         val cserial1 = cserial.text.toString()
 
         if (editTextDate1.isEmpty()) {
-            editTextDate.error = "Insira o valor"
+            editTextDate.error = "Por favor insira a data da assistência"
             return
         }
 
         if (cproblema1.isEmpty()) {
-            cproblema.error = "Insira o valor"
+            cproblema.error = "Por favor insira o problema"
             return
         }
 
-        if (cproblema21.isEmpty()) {
-            cproblema2.error = "Insira o valor"
-            return
-        }
+        //if (cproblema21.isEmpty()) {
+        //    cproblema2.error = "Insira o valor"
+        //    return
+        //}
 
-        if (corcamento1.isEmpty()) {
-            corcamento.error = "Insira o valor"
-            return
-        }
+        //if (corcamento1.isEmpty()) {
+        //    corcamento.error = "Insira o valor"
+        //    return
+        //}
 
         //fragmento cliente
         if (cnome1.isEmpty()) {
-            cnome.error = "Insira o valor"
+            cnome.error = "Por favor insira o nome"
             return
         }
 
         if (ctelemovel1.isEmpty()) {
-            ctelemovel.error = "Insira o valor"
+            ctelemovel.error = "Por favor insira o telemóvel"
             return
         }
 
         if (cemail1.isEmpty()) {
-            cemail.error = "Insira o valor"
+            cemail.error = "Por favor insira o email"
             return
         }
 
         //fragmento equipamento
         if (cequipamento1.isEmpty()) {
-            cequipamento.error = "Insira o valor"
+            cequipamento.error = "Por favor insira o equipamento"
             return
         }
 
         if (cmodelo1.isEmpty()) {
-            cmodelo.error = "Insira o valor"
+            cmodelo.error = "Por favor insira o modelo"
             return
         }
 
         if (cserial1.isEmpty()) {
-            cserial.error = "Insira o valor"
+            cserial.error = "Por favor insira o serial"
             return
         }
 

@@ -4,7 +4,6 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Base64
 import android.view.View
 import android.widget.Button
@@ -164,6 +163,8 @@ class AssistDetails : AppCompatActivity(){
         val etmodelo = mDialogView.findViewById<EditText>(R.id.modelo)
         val etserial = mDialogView.findViewById<EditText>(R.id.serial)
 
+        val etimageString = mDialogView.findViewById<EditText>(R.id.imageString)
+
         val btnUpdateData = mDialogView.findViewById<Button>(R.id.btnUpdateData)
 
         //colocar o valor na janela do update
@@ -179,6 +180,8 @@ class AssistDetails : AppCompatActivity(){
         etequipamento.setText(intent.getStringExtra("equipamento").toString())
         etmodelo.setText(intent.getStringExtra("modelo").toString())
         etserial.setText(intent.getStringExtra("serial").toString())
+
+        etimageString.setText(intent.getStringExtra("imageString").toString())
 
 
         mDialog.setTitle("A atualizar a assistência de $nome")
@@ -201,7 +204,9 @@ class AssistDetails : AppCompatActivity(){
 
                 etequipamento.text.toString(),
                 etmodelo.text.toString(),
-                etserial.text.toString()
+                etserial.text.toString(),
+
+                etimageString.text.toString()
             )
             Toast.makeText(applicationContext,"Dados da assistência atualizados", Toast.LENGTH_LONG).show()
 
@@ -219,6 +224,8 @@ class AssistDetails : AppCompatActivity(){
             tvmodelo.text = etmodelo.text.toString()
             tvserial.text = etserial.text.toString()
 
+            tvimageString.text = etimageString.text.toString()
+
             alertDialog.dismiss()
         }
 
@@ -235,10 +242,11 @@ class AssistDetails : AppCompatActivity(){
         email: String,
         equipamento: String,
         modelo: String,
-        serial: String
+        serial: String,
+        imageString:String
     ){
         val dbRef = FirebaseDatabase.getInstance().getReference("Assist").child(id)
-        val assistInfo = AssistModel(id, dataassitencia,problemacliente,resolucao,orcamento,nome,telemovel,email,equipamento,modelo,serial)
+        val assistInfo = AssistModel(id, dataassitencia,problemacliente,resolucao,orcamento,nome,telemovel,email,equipamento,modelo,serial,imageString)
         dbRef.setValue(assistInfo)
     }
 }
