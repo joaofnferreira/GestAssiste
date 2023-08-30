@@ -29,6 +29,13 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Consulta::class.java)
             startActivity(intent)
         }
+
+        val buttonClick2 = findViewById<Button>(R.id.sobrenos)
+
+        buttonClick2.setOnClickListener {
+            val intent = Intent(this, SobreNos::class.java)
+            startActivity(intent)
+        }
     }
     }
 

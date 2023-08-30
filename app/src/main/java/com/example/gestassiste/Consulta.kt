@@ -53,7 +53,7 @@ class Consulta : AppCompatActivity() {
                     val mAdapter = AssistAdapter(assistList)
                     assistReciclerView.adapter = mAdapter
 
-                    mAdapter.setOnItemClickListener(object :AssistAdapter.onItemClickListener{
+                    mAdapter.setOnItemClickListener(object : AssistAdapter.onItemClickListener {
 
                         override fun onItemClick(position: Int) {
                             val intent = Intent(this@Consulta, AssistDetails::class.java)

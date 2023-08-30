@@ -65,7 +65,7 @@ class AssistDetails : AppCompatActivity(){
         mTask.addOnSuccessListener {
             Toast.makeText(this,"Assistência eliminada", Toast.LENGTH_LONG).show()
 
-            val intent = Intent(this,Consulta::class.java)
+            val intent = Intent(this, Consulta::class.java)
             finish()
             startActivity(intent)
         }.addOnFailureListener{ error ->
