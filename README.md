@@ -5,3 +5,5 @@ Aplicação que permite a gestão de assistências técnicas.
  - Consulta das assistências registadas.
  - Atualização das assistências registadas.
  - Eliminação das assistências registadas.
+
+Esta aplicação foi desenvolvida no âmbito do projeto da cadeira de Desenvolvimento de Aplicações Móveis, do curso de Engenharia Informática do Instituto Politécnico de Tomar. 
