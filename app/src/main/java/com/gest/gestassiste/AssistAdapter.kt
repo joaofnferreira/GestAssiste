@@ -1,11 +1,11 @@
-package com.example.gestassiste
+package com.gest.gestassiste
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-
+import com.gest.gestassiste.R
 
 
 class AssistAdapter (private val assistList: ArrayList<AssistModel>):

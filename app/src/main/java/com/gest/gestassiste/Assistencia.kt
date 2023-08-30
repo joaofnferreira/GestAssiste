@@ -1,4 +1,4 @@
-package com.example.gestassiste
+package com.gest.gestassiste
 
 import android.app.Activity
 import android.content.Intent
@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import android.util.Base64
 import android.view.View
+import com.gest.gestassiste.R
 import java.io.ByteArrayOutputStream
 
 
@@ -200,6 +201,10 @@ class Assistencia : AppCompatActivity() {
             }.addOnFailureListener {
                 //Toast.makeText(this, "Erro: ${err.message}", Toast.LENGTH_LONG).show()
             }
+
+        val intent = Intent(this, Consulta::class.java)
+        finish()
+        startActivity(intent)
 
     }
 

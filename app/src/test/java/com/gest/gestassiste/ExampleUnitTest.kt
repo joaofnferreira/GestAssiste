@@ -1,4 +1,4 @@
-package com.example.gestassiste
+package com.gest.gestassiste
 
 import org.junit.Test
 

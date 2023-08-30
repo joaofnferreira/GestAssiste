@@ -1,4 +1,4 @@
-package com.example.gestassiste
+package com.gest.gestassiste
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -13,6 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.gest.gestassiste.R
 import com.google.firebase.database.FirebaseDatabase
 
 class AssistDetails : AppCompatActivity(){
@@ -50,10 +51,25 @@ class AssistDetails : AppCompatActivity(){
         }
 
         btnDelete.setOnClickListener{
-            deleteRecord(
-                intent.getStringExtra("idassitencia").toString()
-            )
+            confirmDelete(intent.getStringExtra("idassitencia").toString())
         }
+    }
+
+    private fun confirmDelete(id: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Confirmar eliminação")
+        builder.setMessage("Tem certeza que pretende eliminar esta assistência?")
+
+        builder.setPositiveButton("Sim") { _, _ ->
+            deleteRecord(id)
+        }
+
+        builder.setNegativeButton("Não") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        val alertDialog = builder.create()
+        alertDialog.show()
     }
 
     private fun deleteRecord(

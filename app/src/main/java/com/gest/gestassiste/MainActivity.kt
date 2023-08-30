@@ -1,9 +1,10 @@
-package com.example.gestassiste
+package com.gest.gestassiste
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.gest.gestassiste.R
 
 
 class MainActivity : AppCompatActivity() {

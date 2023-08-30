@@ -1,4 +1,4 @@
-package com.example.gestassiste
+package com.gest.gestassiste
 
 data class AssistModel (
         //assistência

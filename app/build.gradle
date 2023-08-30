@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.gestassiste'
+    namespace 'com.gest.gestassiste'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.gestassiste"
+        applicationId "com.gest.gestassiste"
         minSdk 22
         targetSdk 33
         versionCode 1

@@ -1,7 +1,8 @@
-package com.example.gestassiste
+package com.gest.gestassiste
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.gest.gestassiste.R
 
 class SobreNos: AppCompatActivity() {
 
