@@ -4,19 +4,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.gest.gestassiste.R
+
 
 
 class MainActivity : AppCompatActivity() {
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //val firebase : DatabaseReference = FirebaseDatabase.getInstance().getReference()
-
+        //botão "Criar Assistência"
         val buttonClick = findViewById<Button>(R.id.criarassistencia)
 
         buttonClick.setOnClickListener {
@@ -24,6 +22,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //botão "Consultar Assistência"
         val buttonClick1 = findViewById<Button>(R.id.consultaassiste)
 
         buttonClick1.setOnClickListener {
@@ -31,6 +30,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+        //botão "Sobre Nós"
         val buttonClick2 = findViewById<Button>(R.id.sobrenos)
 
         buttonClick2.setOnClickListener {
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-    }
+}
 
 
 

@@ -5,42 +5,52 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.gest.gestassiste.R
 
+//Adapter para a RecyclerView
+class AssistAdapter(private val assistList: ArrayList<AssistModel>) :
+    RecyclerView.Adapter<AssistAdapter.ViewHolder>() {
 
-class AssistAdapter (private val assistList: ArrayList<AssistModel>):
-    RecyclerView.Adapter<AssistAdapter.ViewHolder>(){
-
+    //declaração
     private lateinit var mListener: onItemClickListener
 
-    interface onItemClickListener{
+    //criação da interface para o clickListener
+    interface onItemClickListener {
         fun onItemClick(position: Int)
     }
 
-    fun setOnItemClickListener(clickListener: onItemClickListener){
-        mListener=clickListener
+    //declaração do método do clickListener
+    fun setOnItemClickListener(clickListener: onItemClickListener) {
+        mListener = clickListener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.lista_assist,parent,false)
-        return ViewHolder(itemView,mListener)
+        //fazer o inflate do layout lista_assist.xml
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.lista_assist, parent, false)
+        return ViewHolder(itemView, mListener)
     }
 
+    //Vê qual é a assistência e coloca o nome do cliente na textview
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentAssist = assistList[position]
-        //Mostra na lista o nome do cliente
         holder.tvAssistName.text = currentAssist.nome
     }
 
+    //número de elementos da lista
     override fun getItemCount(): Int {
         return assistList.size
     }
 
-    class ViewHolder(itemView: View, clickListener: onItemClickListener): RecyclerView.ViewHolder(itemView) {
-        val tvAssistName : TextView = itemView.findViewById(R.id.tvAssistName)
+    class ViewHolder(itemView: View, clickListener: onItemClickListener) :
+        RecyclerView.ViewHolder(itemView) {
+
+        //declaração e inicialização
+        val tvAssistName: TextView = itemView.findViewById(R.id.tvAssistName)
 
         init {
-            itemView.setOnClickListener{
+            //ao clicar no item na lista...
+            itemView.setOnClickListener {
+                //passar a posição
                 clickListener.onItemClick(adapterPosition)
             }
         }

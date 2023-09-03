@@ -79,9 +79,8 @@
         android:id="@+id/imageString"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:hint="String da imagem" />
-
+        android:hint="String da imagem"
+        android:visibility="invisible" />
 
 
 </LinearLayout>

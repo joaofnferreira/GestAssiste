@@ -13,12 +13,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.gest.gestassiste.R
 import com.google.firebase.database.FirebaseDatabase
 
-class AssistDetails : AppCompatActivity(){
+class AssistDetails : AppCompatActivity() {
 
-
+    //declaração
     private lateinit var tvidassitencia: TextView
     private lateinit var tvdataassitencia: TextView
     private lateinit var tvproblemacliente: TextView
@@ -31,6 +30,7 @@ class AssistDetails : AppCompatActivity(){
     private lateinit var tvmodelo: TextView
     private lateinit var tvserial: TextView
     private lateinit var tvimageString: TextView
+
     lateinit var apresentaImagem: ImageView
 
     private lateinit var btnUpdate: Button
@@ -40,56 +40,74 @@ class AssistDetails : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.assist_details)
 
+        //inicializar
         initView()
+        //colocar os dados nas views
         setValuesToViews()
 
-        btnUpdate.setOnClickListener{
+        //botão de atualizar
+        btnUpdate.setOnClickListener {
+            //executar a função openUpdateDialog, passando para a mesma id da assistência e o nome do cliente
             openUpdateDialog(
                 intent.getStringExtra("idassitencia").toString(),
                 intent.getStringExtra("nome").toString(),
             )
         }
 
-        btnDelete.setOnClickListener{
+        //botão de apagar
+        btnDelete.setOnClickListener {
+            //executar a função confirmDelete, passando para a mesma o id da assistência a eliminar
             confirmDelete(intent.getStringExtra("idassitencia").toString())
         }
     }
 
+    //confirmação da eliminação
     private fun confirmDelete(id: String) {
         val builder = AlertDialog.Builder(this)
+        //título e mensagem a fazer a pergunta
         builder.setTitle("Confirmar eliminação")
         builder.setMessage("Tem certeza que pretende eliminar esta assistência?")
 
+        //caso a resposta seja sim, então usar a função deleteRecord, para apagar a assistência
         builder.setPositiveButton("Sim") { _, _ ->
             deleteRecord(id)
         }
 
+        //caso a resposta seja não, não fazer nada e fechar o dialog
         builder.setNegativeButton("Não") { dialog, _ ->
             dialog.dismiss()
         }
 
+        //criar o mostrar o dialog
         val alertDialog = builder.create()
         alertDialog.show()
     }
 
+    //função para apagar o registo
     private fun deleteRecord(
         id: String
-    ){
+    ) {
+        //referência da BD
         val dbRef = FirebaseDatabase.getInstance().getReference("Assist").child(id)
+        //remover
         val mTask = dbRef.removeValue()
 
         mTask.addOnSuccessListener {
-            Toast.makeText(this,"Assistência eliminada", Toast.LENGTH_LONG).show()
+            //mostrar mensagem após apagar
+            Toast.makeText(this, "Assistência eliminada", Toast.LENGTH_LONG).show()
 
+            //passar novamente para a lista após apagar
             val intent = Intent(this, Consulta::class.java)
             finish()
             startActivity(intent)
-        }.addOnFailureListener{ error ->
-            Toast.makeText(this,"Erro ao eliminar: ${error.message}", Toast.LENGTH_LONG).show()
+        }.addOnFailureListener { error ->
+            //caso algo corra mal
+            Toast.makeText(this, "Erro ao eliminar: ${error.message}", Toast.LENGTH_LONG).show()
         }
     }
 
-    private fun  initView(){
+    //função para inicializar a view
+    private fun initView() {
         tvidassitencia = findViewById(R.id.tvidassitencia)
         tvdataassitencia = findViewById(R.id.tvdataassitencia)
         tvproblemacliente = findViewById(R.id.tvproblemacliente)
@@ -110,7 +128,8 @@ class AssistDetails : AppCompatActivity(){
         btnDelete = findViewById(R.id.btnDelete)
     }
 
-    private fun setValuesToViews(){
+    //função para colocar os dados nas views correspondentes
+    private fun setValuesToViews() {
         tvidassitencia.text = intent.getStringExtra("idassitencia")
         tvdataassitencia.text = intent.getStringExtra("dataassitencia")
         tvproblemacliente.text = intent.getStringExtra("problemacliente")
@@ -136,9 +155,10 @@ class AssistDetails : AppCompatActivity(){
             // Conversão
             val imageBitmap = convertBase64ToBitmap(imageString)
 
-
             if (imageBitmap != null) {
+                //colocação na view
                 apresentaImagem.setImageBitmap(imageBitmap)
+
                 apresentaImagem.visibility = View.VISIBLE
                 tvimageString.visibility = View.GONE
             } else {
@@ -147,6 +167,7 @@ class AssistDetails : AppCompatActivity(){
         }
     }
 
+    //função para converter de Base64 novamente para Bitmap
     private fun convertBase64ToBitmap(base64String: String): Bitmap? {
         return try {
             val decodedBytes = Base64.decode(base64String, Base64.DEFAULT)
@@ -156,16 +177,23 @@ class AssistDetails : AppCompatActivity(){
         }
     }
 
+    //função para fazer o update dos dados
     private fun openUpdateDialog(
         id: String,
         nome: String
-    ){
-        val mDialog = AlertDialog.Builder(this)
-        val inflater = layoutInflater
-        val mDialogView = inflater.inflate(R.layout.update_dialog,null)
+    ) {
 
+        //criar o dialog
+        val mDialog = AlertDialog.Builder(this)
+
+        //fazer o inflate do update_dialog.xml
+        val inflater = layoutInflater
+        val mDialogView = inflater.inflate(R.layout.update_dialog, null)
+
+        //definir a view no dialog
         mDialog.setView(mDialogView)
 
+        //inicializar as textviews e o botão de update
         val etdataassitencia = mDialogView.findViewById<EditText>(R.id.dataassitencia)
         val etproblemacliente = mDialogView.findViewById<EditText>(R.id.problemacliente)
         val etresolucao = mDialogView.findViewById<EditText>(R.id.resolucao)
@@ -183,7 +211,7 @@ class AssistDetails : AppCompatActivity(){
 
         val btnUpdateData = mDialogView.findViewById<Button>(R.id.btnUpdateData)
 
-        //colocar o valor na janela do update
+        //colocar o valor atual na janela do update
         etdataassitencia.setText(intent.getStringExtra("dataassitencia").toString())
         etproblemacliente.setText(intent.getStringExtra("problemacliente").toString())
         etresolucao.setText(intent.getStringExtra("resolucao").toString())
@@ -199,13 +227,16 @@ class AssistDetails : AppCompatActivity(){
 
         etimageString.setText(intent.getStringExtra("imageString").toString())
 
-
+        //definir o título do dialog
         mDialog.setTitle("A atualizar a assistência de $nome")
 
+        //criar e mostrar o dialog
         var alertDialog = mDialog.create()
         alertDialog.show()
 
-        btnUpdateData.setOnClickListener{
+        //ao clicar
+        btnUpdateData.setOnClickListener {
+            //chama a função do update
             updateAssistData(
                 id,
                 //receber o valor que foi atualizado
@@ -224,7 +255,12 @@ class AssistDetails : AppCompatActivity(){
 
                 etimageString.text.toString()
             )
-            Toast.makeText(applicationContext,"Dados da assistência atualizados", Toast.LENGTH_LONG).show()
+            //mostrar mensagem de sucesso
+            Toast.makeText(
+                applicationContext,
+                "Dados da assistência atualizados",
+                Toast.LENGTH_LONG
+            ).show()
 
             //atualizar no campo dos detalhes o valor referente
             tvdataassitencia.text = etdataassitencia.text.toString()
@@ -242,13 +278,15 @@ class AssistDetails : AppCompatActivity(){
 
             tvimageString.text = etimageString.text.toString()
 
+            //fechar o dialog
             alertDialog.dismiss()
         }
 
     }
 
+    //função para fazer o update dos dados, recebe o id da assistência e os dados que foram atualizados
     private fun updateAssistData(
-        id:String,
+        id: String,
         dataassitencia: String,
         problemacliente: String,
         resolucao: String,
@@ -259,10 +297,26 @@ class AssistDetails : AppCompatActivity(){
         equipamento: String,
         modelo: String,
         serial: String,
-        imageString:String
-    ){
+        imageString: String
+    ) {
+        //referência da BD
         val dbRef = FirebaseDatabase.getInstance().getReference("Assist").child(id)
-        val assistInfo = AssistModel(id, dataassitencia,problemacliente,resolucao,orcamento,nome,telemovel,email,equipamento,modelo,serial,imageString)
+        //variável com os dados para colocar na BD, no formato do AssistModel
+        val assistInfo = AssistModel(
+            id,
+            dataassitencia,
+            problemacliente,
+            resolucao,
+            orcamento,
+            nome,
+            telemovel,
+            email,
+            equipamento,
+            modelo,
+            serial,
+            imageString
+        )
+        //atualizar os dados na BD
         dbRef.setValue(assistInfo)
     }
 }

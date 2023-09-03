@@ -15,12 +15,12 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import android.util.Base64
 import android.view.View
-import com.gest.gestassiste.R
 import java.io.ByteArrayOutputStream
 
 
 class Assistencia : AppCompatActivity() {
 
+    //declaração
     private lateinit var editTextDate: EditText
     private lateinit var cproblema: EditText
     private lateinit var cproblema2: EditText
@@ -45,7 +45,7 @@ class Assistencia : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_assistencia)
 
-
+        //inicialização
         editTextDate = findViewById(R.id.editTextDate)
         cproblema = findViewById(R.id.cproblema)
         cproblema2 = findViewById(R.id.cproblema2)
@@ -64,12 +64,15 @@ class Assistencia : AppCompatActivity() {
         photo_button = findViewById(R.id.photo_button)
         imageView = findViewById(R.id.imageView)
 
+        //referência da BD
         dbRef = FirebaseDatabase.getInstance().getReference("Assist")
 
+        //botão guardar
         button_save.setOnClickListener {
             saveEquipamento()
         }
 
+        //botão foto
         photo_button.setOnClickListener {
             capturePhoto()
         }
@@ -77,7 +80,7 @@ class Assistencia : AppCompatActivity() {
 
     }
 
-
+    //função para guardar os dados
     private fun saveEquipamento() {
 
         //receber valores
@@ -98,6 +101,8 @@ class Assistencia : AppCompatActivity() {
         val cmodelo1 = cmodelo.text.toString()
         val cserial1 = cserial.text.toString()
 
+
+        //verificação de preenchimento dos vários campos
         if (editTextDate1.isEmpty()) {
             editTextDate.error = "Por favor insira a data da assistência"
             return
@@ -107,16 +112,6 @@ class Assistencia : AppCompatActivity() {
             cproblema.error = "Por favor insira o problema"
             return
         }
-
-        //if (cproblema21.isEmpty()) {
-        //    cproblema2.error = "Insira o valor"
-        //    return
-        //}
-
-        //if (corcamento1.isEmpty()) {
-        //    corcamento.error = "Insira o valor"
-        //    return
-        //}
 
         //fragmento cliente
         if (cnome1.isEmpty()) {
@@ -150,17 +145,20 @@ class Assistencia : AppCompatActivity() {
             return
         }
 
+        //criação do ID
         val assistID = dbRef.push().key!!
 
         //Capturar a imagem
         val imageBitmap = (imageView.drawable as? BitmapDrawable)?.bitmap
 
+        //Conversão
         val imageString = if (imageBitmap != null) {
             convertBitmapToBase64(imageBitmap)
         } else {
             ""
         }
 
+        //preparar os dados para a inserção
         val assist = AssistModel(
             assistID,
             editTextDate1,
@@ -176,10 +174,11 @@ class Assistencia : AppCompatActivity() {
             imageString
         )
 
-
+        //inserção dos dados
         dbRef.child(assistID).setValue(assist)
             .addOnCompleteListener {
-                //Toast.makeText(this,"teste",Toast.LENGTH_LONG).show()
+
+                //Limpar os vários campos
 
                 //fragmento assistência
                 editTextDate.text.clear()
@@ -197,11 +196,13 @@ class Assistencia : AppCompatActivity() {
                 cmodelo.text.clear()
                 cserial.text.clear()
 
+                //esconder a imageView
                 imageView.visibility = View.GONE
             }.addOnFailureListener {
                 //Toast.makeText(this, "Erro: ${err.message}", Toast.LENGTH_LONG).show()
             }
 
+        //passar para a página da lista
         val intent = Intent(this, Consulta::class.java)
         finish()
         startActivity(intent)
@@ -216,12 +217,15 @@ class Assistencia : AppCompatActivity() {
         return Base64.encodeToString(byteArray, Base64.DEFAULT)
     }
 
+    //Função para a foto
     fun capturePhoto() {
         val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         resultLauncher.launch(cameraIntent)
     }
 
-    var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+    //coloca a foto na imageView
+    var resultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
                 val data: Intent? = result.data
                 val imageBitmap = data?.extras?.get("data") as Bitmap?
@@ -230,7 +234,6 @@ class Assistencia : AppCompatActivity() {
                 }
             }
         }
-
 
 
 }
